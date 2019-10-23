@@ -5,7 +5,7 @@ import es.alvsanand.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
 import scopt.OptionParser
 
 /**
-  * Created by alvsanand on 11/05/16.
+  * Created by Brahma.
   */
 object RecommenderServerApp extends App with Logging {
   override def main(args: Array[String]) {

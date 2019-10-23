@@ -6,7 +6,7 @@ import org.apache.spark.SparkConf
 import scopt.OptionParser
 
 /**
-  * @author ${user.name}
+  * @author Brahma
   */
 object DatasetLoaderApp extends App with Logging {
 
@@ -22,7 +22,7 @@ object DatasetLoaderApp extends App with Logging {
     defaultParams += "dataset.tmp.dir" -> "%s/.spark_recommender".format(sys.env("HOME"))
 
     val parser = new OptionParser[scala.collection.mutable.Map[String, Any]]("ScaleDataset") {
-      head("Spark Recommender Example")
+      head("Spark Recommender")
       opt[String]("spark.cores")
         .text("Number of cores in the Spark cluster")
         .action((x, c) => {

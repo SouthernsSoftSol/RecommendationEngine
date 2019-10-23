@@ -24,7 +24,7 @@ object RecommenderControllerProtocol extends DefaultJsonProtocol with NullOption
 }
 
 /**
-  * Created by alvsanand on 11/05/16.
+  * Created by Brahma.
   */
 object RecommenderController extends SimpleRoutingApp with Logging{
   val ES_HOST_PORT_REGEX = "(.+):(\\d+)".r

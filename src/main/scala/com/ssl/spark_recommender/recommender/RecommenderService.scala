@@ -11,7 +11,7 @@ import org.elasticsearch.index.query.{MoreLikeThisQueryBuilder, QueryBuilders}
 import org.elasticsearch.search.SearchHits
 
 /**
-  * Created by alvsanand on 11/05/16.
+  * Created by Brahma.
   */
 object RecommenderService {
   private val MAX_RECOMMENDATIONS = 10

@@ -17,7 +17,7 @@ import org.jblas.DoubleMatrix
 import scala.collection.mutable
 
 /**
-  * Created by alvsanand on 7/05/16.
+  * Created by Brahma
   */
 object ALSTrainer {
   val USER_RECS_COLLECTION_NAME = "userRecs"

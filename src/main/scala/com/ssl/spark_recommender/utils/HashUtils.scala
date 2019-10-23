@@ -1,7 +1,7 @@
 package com.ssl.spark_recommender.utils
 
 /**
-  * Created by alvsanand on 1/04/17.
+  * Created by Brahma.
   */
 object HashUtils {
   def hash(string: String): Int = {

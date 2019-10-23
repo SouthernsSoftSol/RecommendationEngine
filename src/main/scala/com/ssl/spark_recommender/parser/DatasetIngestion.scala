@@ -24,7 +24,7 @@ import scala.collection.mutable
 
 
 /**
-  * Created by alvsanand on 7/05/16.
+  * Created by Brahma.
   */
 object DatasetIngestion {
   val PRODUCTS_COLLECTION_NAME = "products"

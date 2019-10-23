@@ -10,7 +10,7 @@ import org.apache.commons.io.{FileUtils, IOUtils}
 import scala.io.Source
 
 /**
-  * Created by alvsanand on 7/05/16.
+  * Created by Brahma.
   */
 object DatasetDownloader extends Logging{
   private val DATASET_URL = "http://times.cs.uiuc.edu/~wang296/Data/LARA/Amazon/AmazonReviews.zip"

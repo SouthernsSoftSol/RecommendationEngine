@@ -6,7 +6,7 @@ import org.apache.spark.SparkConf
 import scopt.OptionParser
 
 /**
-  * @author ${user.name}
+  * @author Brahma
   */
 object RecommenderTrainerApp extends App with Logging {
 

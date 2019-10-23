@@ -10,7 +10,7 @@ case class AmazonProductInfo(Features: String, ImgURL: String, Name: String, Pri
 case class AmazonProductReviews(ProductInfo: AmazonProductInfo, Reviews: Seq[AmazonReview])
 
 /**
-  * Created by alvsanand on 11/05/16.
+  * Created by Brahma.
   */
 case class Product(id: Int, extId: String, name: String, price: String, features: String, imgUrl: String)
 
@@ -20,7 +20,7 @@ case class Product(id: Int, extId: String, name: String, price: String, features
 case class User(id: Int, extId: String)
 
 /**
-  * Created by alvsanand on 11/05/16.
+  * Created by Brahma.
   */
 case class Review(reviewId: String, userId: Int, productId: Int, val title: String, overall: Option[Double], content: String, date: Timestamp)
 

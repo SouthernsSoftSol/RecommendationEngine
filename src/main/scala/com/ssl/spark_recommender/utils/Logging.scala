@@ -3,7 +3,7 @@ package com.ssl.spark_recommender.utils
 import org.slf4j.LoggerFactory
 
 /**
-  * Created by alvsanand on 14/05/16.
+  * Created by Brahma.
   */
 trait Logging {
   @transient
