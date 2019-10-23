@@ -1,7 +1,7 @@
 package com.ssl.spark_recommender
 
-import es.alvsanand.spark_recommender.recommender.RecommenderController
-import es.alvsanand.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
+import com.ssl.spark_recommender.recommender.RecommenderController
+import com.ssl.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
 import scopt.OptionParser
 
 /**

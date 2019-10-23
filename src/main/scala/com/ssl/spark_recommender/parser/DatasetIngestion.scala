@@ -7,9 +7,9 @@ import java.util.Locale
 
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.{MongoClient, MongoClientURI, WriteConcern => MongodbWriteConcern}
-import es.alvsanand.spark_recommender.model
-import es.alvsanand.spark_recommender.model._
-import es.alvsanand.spark_recommender.utils.{ESConfig, HashUtils, MongoConfig}
+import com.ssl.spark_recommender.model
+import com.ssl.spark_recommender.model._
+import com.ssl.spark_recommender.utils.{ESConfig, HashUtils, MongoConfig}
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest

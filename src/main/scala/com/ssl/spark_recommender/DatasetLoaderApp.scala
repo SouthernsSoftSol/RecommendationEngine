@@ -1,7 +1,7 @@
 package com.ssl.spark_recommender
 
-import es.alvsanand.spark_recommender.parser.{DatasetDownloader, DatasetIngestion}
-import es.alvsanand.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
+import com.ssl.spark_recommender.parser.{DatasetDownloader, DatasetIngestion}
+import com.ssl.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
 import org.apache.spark.SparkConf
 import scopt.OptionParser
 

@@ -2,9 +2,9 @@ package com.ssl.spark_recommender.trainer
 
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.{MongoClient, MongoClientURI, WriteConcern => MongodbWriteConcern}
-import es.alvsanand.spark_recommender.model.{ProductRecommendation, Rec, Review, UserRecommendation}
-import es.alvsanand.spark_recommender.parser.DatasetIngestion
-import es.alvsanand.spark_recommender.utils.MongoConfig
+import com.ssl.spark_recommender.model.{ProductRecommendation, Rec, Review, UserRecommendation}
+import com.ssl.spark_recommender.parser.DatasetIngestion
+import com.ssl.spark_recommender.utils.MongoConfig
 import org.apache.spark.SparkConf
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.ml.recommendation.{ALS, ALSModel}

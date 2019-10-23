@@ -4,8 +4,8 @@ import java.net.InetAddress
 
 import akka.actor.ActorSystem
 import com.mongodb.casbah.{MongoClient, MongoClientURI}
-import es.alvsanand.spark_recommender.model._
-import es.alvsanand.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
+import com.ssl.spark_recommender.model._
+import com.ssl.spark_recommender.utils.{ESConfig, Logging, MongoConfig}
 import org.elasticsearch.common.settings.Settings
 import org.elasticsearch.common.transport.InetSocketTransportAddress
 import org.elasticsearch.transport.client.PreBuiltTransportClient

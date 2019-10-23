@@ -3,7 +3,7 @@ package com.ssl.spark_recommender.parser
 import java.io._
 import java.net.URL
 
-import es.alvsanand.spark_recommender.utils.Logging
+import com.ssl.spark_recommender.utils.Logging
 import org.apache.commons.compress.archivers.zip.ZipFile
 import org.apache.commons.io.{FileUtils, IOUtils}
 

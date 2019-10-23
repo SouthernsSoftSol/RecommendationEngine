@@ -1,10 +1,10 @@
 package com.ssl.spark_recommender.recommender
 
 import com.mongodb.casbah.Imports._
-import es.alvsanand.spark_recommender.model._
-import es.alvsanand.spark_recommender.parser.DatasetIngestion
-import es.alvsanand.spark_recommender.trainer.ALSTrainer
-import es.alvsanand.spark_recommender.utils.{ESConfig, HashUtils, MongoConfig}
+import com.ssl.spark_recommender.model._
+import com.ssl.spark_recommender.parser.DatasetIngestion
+import com.ssl.spark_recommender.trainer.ALSTrainer
+import com.ssl.spark_recommender.utils.{ESConfig, HashUtils, MongoConfig}
 import org.elasticsearch.action.search.SearchResponse
 import org.elasticsearch.client.Client
 import org.elasticsearch.index.query.{MoreLikeThisQueryBuilder, QueryBuilders}

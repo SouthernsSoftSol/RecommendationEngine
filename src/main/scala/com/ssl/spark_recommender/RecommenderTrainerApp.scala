@@ -1,7 +1,7 @@
 package com.ssl.spark_recommender
 
-import es.alvsanand.spark_recommender.trainer.ALSTrainer
-import es.alvsanand.spark_recommender.utils.{Logging, MongoConfig}
+import com.ssl.spark_recommender.trainer.ALSTrainer
+import com.ssl.spark_recommender.utils.{Logging, MongoConfig}
 import org.apache.spark.SparkConf
 import scopt.OptionParser
 
