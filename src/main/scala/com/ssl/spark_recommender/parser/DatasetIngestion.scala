@@ -6,21 +6,18 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 import com.mongodb.casbah.commons.MongoDBObject
-import com.mongodb.casbah.{MongoClient, MongoClientURI, WriteConcern => MongodbWriteConcern}
+import com.mongodb.casbah.{MongoClient, MongoClientURI}
 import com.ssl.spark_recommender.model
 import com.ssl.spark_recommender.model._
 import com.ssl.spark_recommender.utils.{ESConfig, HashUtils, MongoConfig}
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsRequest
-import org.elasticsearch.client.transport.TransportClient
 import org.elasticsearch.common.settings.Settings
 import org.elasticsearch.common.transport.InetSocketTransportAddress
 import org.elasticsearch.transport.client.PreBuiltTransportClient
-
-import scala.collection.mutable
 
 
 /**
@@ -60,7 +57,6 @@ object DatasetIngestion {
   }
 
   private def storeDataInMongo(products: DataFrame, users: DataFrame, reviews: DataFrame)(implicit mongoConf: MongoConfig): Unit = {
-    import products.sqlContext.implicits._
 
     val mongoClient = MongoClient(MongoClientURI(mongoConf.uri))
 
@@ -100,7 +96,6 @@ object DatasetIngestion {
   }
 
   private def storeDataInES(products: DataFrame)(implicit esConf: ESConfig): Unit = {
-    import products.sqlContext.implicits._
 
     val options = Map("es.nodes" -> esConf.httpHosts,
       "es.http.timeout" -> "100m",
