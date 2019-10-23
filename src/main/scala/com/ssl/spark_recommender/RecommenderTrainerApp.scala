@@ -48,7 +48,7 @@ object RecommenderTrainerApp extends App with Logging {
         .action((x, c) => {
           c += "maxRecommendations" -> x
         })
-      help("help") text("prints this usage text")
+      help("help") text "prints this usage text"
     }
     parser.parse(args, defaultParams).map { params =>
       run(params.toMap)

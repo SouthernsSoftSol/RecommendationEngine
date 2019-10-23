@@ -1,16 +1,14 @@
 package com.ssl.spark_recommender.trainer
 
 import com.mongodb.casbah.commons.MongoDBObject
-import com.mongodb.casbah.{MongoClient, MongoClientURI, WriteConcern => MongodbWriteConcern}
-import com.ssl.spark_recommender.model.{ProductRecommendation, Rec, Review, UserRecommendation}
+import com.mongodb.casbah.{MongoClient, MongoClientURI}
+import com.ssl.spark_recommender.model.{ProductRecommendation, Rec, UserRecommendation}
 import com.ssl.spark_recommender.parser.DatasetIngestion
 import com.ssl.spark_recommender.utils.MongoConfig
 import org.apache.spark.SparkConf
-import org.apache.spark.broadcast.Broadcast
-import org.apache.spark.ml.recommendation.{ALS, ALSModel}
 import org.apache.spark.ml.recommendation.ALS.Rating
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.types.{StructType, _}
+import org.apache.spark.ml.recommendation.{ALS, ALSModel}
+import org.apache.spark.sql.types._
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 import org.jblas.DoubleMatrix
 
@@ -32,7 +30,6 @@ object ALSTrainer {
       .getOrCreate()
 
     import spark.implicits._
-    import org.apache.spark.sql.functions._
 
     val ratings = spark.read
       .option("uri", mongoConf.uri)
@@ -78,8 +75,8 @@ object ALSTrainer {
   }
 
   private def calculateUserRecs(maxRecs: Int, model: ALSModel, users: Dataset[Int], products: Dataset[Int])(implicit mongoConf: MongoConfig, mongoClient: MongoClient): Unit = {
-    import users.sqlContext.implicits._
     import org.apache.spark.sql.functions._
+    import users.sqlContext.implicits._
 
     val userProductsJoin = users.crossJoin(products)
     val userRating = userProductsJoin.map { row => Rating(row.getAs[Int](0), row.getAs[Int](1), 0) }
@@ -89,7 +86,7 @@ object ALSTrainer {
     }
 
     val recommendations = model.transform(userRating)
-      .filter(col(model.getPredictionCol) > 0 && !col(model.getPredictionCol).isNaN )
+      .filter(col(model.getPredictionCol) > 0 && !col(model.getPredictionCol).isNaN)
       .groupByKey(p => (p.getAs[Int](model.getUserCol)))
       .mapGroups { case (userId, predictions) =>
         val recommendations = predictions.toSeq.sorted(RatingOrder)
@@ -114,8 +111,8 @@ object ALSTrainer {
   }
 
   private def calculateProductRecs(maxRecs: Int, model: ALSModel, products: Dataset[Int])(implicit mongoConf: MongoConfig, mongoClient: MongoClient): Unit = {
-    import products.sqlContext.implicits._
     import org.apache.spark.sql.functions._
+    import products.sqlContext.implicits._
 
     object RatingOrder extends Ordering[(Int, Int, Double)] {
       def compare(x: (Int, Int, Double), y: (Int, Int, Double)) = y._3 compare x._3

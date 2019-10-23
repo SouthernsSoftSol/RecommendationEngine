@@ -15,7 +15,7 @@ case class AmazonProductReviews(ProductInfo: AmazonProductInfo, Reviews: Seq[Ama
 case class Product(id: Int, extId: String, name: String, price: String, features: String, imgUrl: String)
 
 /*
-  * Created by alvsanand on 31/03/17.
+  * Created by Brahma.
  */
 case class User(id: Int, extId: String)
 
